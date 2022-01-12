@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bitbucket-pipe:
+    build:
+        context: .
+    image: minhiriathaen/oqcp-bitbucket-pipe
+    environment:
+      - BITBUCKET_REPO_OWNER=minhiriathaen
+      - BITBUCKET_REPO_SLUG=snake
+      - BITBUCKET_COMMIT=c26cf8a
+      - OPENQUALITYCHECKER_ACCESS_TOKEN=33073423-24df-4065-8wrg-e0a2asdf1cdg0
+      - OPENQUALITYCHECKER_PROJECT_NAME=process-metrics
+      - DEBUG=true

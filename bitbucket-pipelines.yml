@@ -1,0 +1,37 @@
+image:
+    name: python:3.7
+
+test: &test
+    step:
+        name: Test
+        script:
+            - pip install -r test/requirements.txt
+            - pytest -v test/test.py
+        services:
+            - docker
+
+push: &push
+    step:
+        name: Push and Tag
+        image: python:3.7
+        script:
+            -   pipe: docker://bitbucketpipelines/bitbucket-pipe-release:4.0.1
+                variables:
+                    DOCKERHUB_USERNAME: $DOCKERHUB_USERNAME
+                    DOCKERHUB_PASSWORD: $DOCKERHUB_PASSWORD
+                    IMAGE: minhiriathaen/$BITBUCKET_REPO_SLUG
+                    VERSION: test-${BITBUCKET_BUILD_NUMBER}
+                    GIT_PUSH: 'false'
+                    TAG: 'false'
+                    CHANGELOG: 'false'
+        services:
+            - docker
+
+pipelines:
+    default:
+        #        -   <<: *test
+        -   <<: *push
+    branches:
+        master:
+            #            -   <<: *test
+            -   <<: *push

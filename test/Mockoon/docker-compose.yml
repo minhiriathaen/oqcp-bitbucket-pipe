@@ -1,0 +1,30 @@
+version: "3.8"
+ 
+ # All of mockoon-cli start flags (--port, --index, etc.) must be provided when running the container, see:
+ # https://github.com/mockoon/cli#docker
+ 
+services:
+  bitbucket-mockoon-openqualitychecker:
+    build:
+      context: .
+    image: oqcp-bitbucket-mockoon
+    command: -d data -n "OpenQualityChecker" -p 3000
+    networks:
+      - oqcp-bitbucket
+    ports:
+      - 3031:3000
+
+  bitbucket-mockoon-bitbucket:
+    build:
+      context: .     
+    image: oqcp-bitbucket-mockoon
+    command: -d data -n "BitBucket" -p 3000
+    networks:
+      - oqcp-bitbucket
+    ports:
+      - 3033:3000
+
+
+networks:
+  oqcp-bitbucket:
+    name: oqcp-bitbucket

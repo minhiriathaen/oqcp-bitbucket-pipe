@@ -1,0 +1,9 @@
+bitbucket-pipes-toolkit==2.1.0
+
+requests~=2.25.1
+
+pytest~=6.2.3
+
+backoff~=1.10.0
+
+colorlog~=4.0.2

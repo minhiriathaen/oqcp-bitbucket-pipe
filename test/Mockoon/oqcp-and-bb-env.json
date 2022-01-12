@@ -1,0 +1,452 @@
+{
+    "source": "mockoon:1.14.1",
+    "data": [
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "",
+                "lastMigration": 15,
+                "name": "OpenQualityChecker",
+                "endpointPrefix": "backend",
+                "latency": 0,
+                "port": 3031,
+                "routes": [
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/projects",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            },
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"error\": \"Not authorized\"\r\n}",
+                                "latency": 0,
+                                "statusCode": 403,
+                                "label": "",
+                                "headers": [],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [
+                                    {
+                                        "target": "header",
+                                        "modifier": "Token",
+                                        "value": "invalid_oqcp_token",
+                                        "isRegex": false
+                                    }
+                                ],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/project/502326/branches",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/project/212/branches",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=UTF-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/project/215/branches",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/branch/285/versions",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"data\":[\r\n      {\r\n         \"id\":326,\r\n         \"hash\":\"failed-quality-commit-hash\",\r\n         \"committerName\":\"{{firstName}} {{lastName}}\",\r\n         \"committerEmail\":\"{{email}}\",\r\n         \"committerDate\":\"2020-12-18T08:31:03Z\",\r\n         \"authorName\":\"{{firstName}} {{lastName}}\",\r\n         \"authorEmail\":\"{{email}}\",\r\n         \"authorDate\":\"2020-12-18T08:31:03Z\",\r\n         \"log\":\"initial commit\\n\",\r\n         \"lastStatusChange\":null,\r\n         \"status\":null,\r\n         \"failedAttempts\":null,\r\n         \"analyzerMessage\":null,\r\n         \"parentHashes\":[\r\n            \r\n         ]\r\n      },\r\n      {\r\n         \"id\":327,\r\n         \"hash\":\"not-existing-quality-commit-hash\",\r\n         \"committerName\":\"{{firstName}} {{lastName}}\",\r\n         \"committerEmail\":\"{{email}}\",\r\n         \"committerDate\":\"2020-12-18T08:31:03Z\",\r\n         \"authorName\":\"{{firstName}} {{lastName}}\",\r\n         \"authorEmail\":\"{{email}}\",\r\n         \"authorDate\":\"2020-12-18T08:31:03Z\",\r\n         \"log\":\"initial commit\\n\",\r\n         \"lastStatusChange\":null,\r\n         \"status\":null,\r\n         \"failedAttempts\":null,\r\n         \"analyzerMessage\":null,\r\n         \"parentHashes\":[\r\n            \r\n         ]\r\n      },\r\n      {\r\n         \"id\":328,\r\n         \"hash\":\"successful-quality-commit-hash\",\r\n         \"committerName\":\"{{firstName}} {{lastName}}\",\r\n         \"committerEmail\":\"{{email}}\",\r\n         \"committerDate\":\"2020-12-18T08:31:03Z\",\r\n         \"authorName\":\"{{firstName}} {{lastName}}\",\r\n         \"authorEmail\":\"{{email}}\",\r\n         \"authorDate\":\"2020-12-18T08:31:03Z\",\r\n         \"log\":\"initial commit\\n\",\r\n         \"lastStatusChange\":null,\r\n         \"status\":null,\r\n         \"failedAttempts\":null,\r\n         \"analyzerMessage\":null,\r\n         \"parentHashes\":[\r\n            \r\n         ]\r\n      }\r\n   ]\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=UTF-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/branch/289/versions",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=UTF-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/branch/1/versions",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"data\":[\r\n      {\r\n         \"id\":11,\r\n         \"hash\":\"failed-quality-commit-hash\",\r\n         \"committerName\":\"{{firstName}} {{lastName}}\",\r\n         \"committerEmail\":\"{{email}}\",\r\n         \"committerDate\":\"2020-12-18T08:31:03Z\",\r\n         \"authorName\":\"{{firstName}} {{lastName}}\",\r\n         \"authorEmail\":\"{{email}}\",\r\n         \"authorDate\":\"2020-12-18T08:31:03Z\",\r\n         \"log\":\"initial commit\\n\",\r\n         \"lastStatusChange\":null,\r\n         \"status\":null,\r\n         \"failedAttempts\":null,\r\n         \"analyzerMessage\":null,\r\n         \"parentHashes\":[\r\n            \r\n         ]\r\n      },\r\n      {\r\n         \"id\":12,\r\n         \"hash\":\"not-existing-quality-commit-hash\",\r\n         \"committerName\":\"{{firstName}} {{lastName}}\",\r\n         \"committerEmail\":\"{{email}}\",\r\n         \"committerDate\":\"2020-12-18T08:31:03Z\",\r\n         \"authorName\":\"{{firstName}} {{lastName}}\",\r\n         \"authorEmail\":\"{{email}}\",\r\n         \"authorDate\":\"2020-12-18T08:31:03Z\",\r\n         \"log\":\"initial commit\\n\",\r\n         \"lastStatusChange\":null,\r\n         \"status\":null,\r\n         \"failedAttempts\":null,\r\n         \"analyzerMessage\":null,\r\n         \"parentHashes\":[\r\n            \r\n         ]\r\n      },\r\n      {\r\n         \"id\":328,\r\n         \"hash\":\"successful-quality-commit-hash\",\r\n         \"committerName\":\"{{firstName}} {{lastName}}\",\r\n         \"committerEmail\":\"{{email}}\",\r\n         \"committerDate\":\"2020-12-18T08:31:03Z\",\r\n         \"authorName\":\"{{firstName}} {{lastName}}\",\r\n         \"authorEmail\":\"{{email}}\",\r\n         \"authorDate\":\"2020-12-18T08:31:03Z\",\r\n         \"log\":\"initial commit\\n\",\r\n         \"lastStatusChange\":null,\r\n         \"status\":null,\r\n         \"failedAttempts\":null,\r\n         \"analyzerMessage\":null,\r\n         \"parentHashes\":[\r\n            \r\n         ]\r\n      }\r\n   ]\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=UTF-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/branch/3/versions",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"data\":[\r\n      {\r\n         \"id\":31,\r\n         \"hash\":\"failed-quality-commit-hash\",\r\n         \"committerName\":\"{{firstName}} {{lastName}}\",\r\n         \"committerEmail\":\"{{email}}\",\r\n         \"committerDate\":\"2020-12-18T08:31:03Z\",\r\n         \"authorName\":\"{{firstName}} {{lastName}}\",\r\n         \"authorEmail\":\"{{email}}\",\r\n         \"authorDate\":\"2020-12-18T08:31:03Z\",\r\n         \"log\":\"initial commit\\n\",\r\n         \"lastStatusChange\":null,\r\n         \"status\":null,\r\n         \"failedAttempts\":null,\r\n         \"analyzerMessage\":null,\r\n         \"parentHashes\":[\r\n            \r\n         ]\r\n      },\r\n      {\r\n         \"id\":32,\r\n         \"hash\":\"not-existing-quality-commit-hash\",\r\n         \"committerName\":\"{{firstName}} {{lastName}}\",\r\n         \"committerEmail\":\"{{email}}\",\r\n         \"committerDate\":\"2020-12-18T08:31:03Z\",\r\n         \"authorName\":\"{{firstName}} {{lastName}}\",\r\n         \"authorEmail\":\"{{email}}\",\r\n         \"authorDate\":\"2020-12-18T08:31:03Z\",\r\n         \"log\":\"initial commit\\n\",\r\n         \"lastStatusChange\":null,\r\n         \"status\":null,\r\n         \"failedAttempts\":null,\r\n         \"analyzerMessage\":null,\r\n         \"parentHashes\":[\r\n            \r\n         ]\r\n      },\r\n      {\r\n         \"id\":33,\r\n         \"hash\":\"successful-quality-commit-hash\",\r\n         \"committerName\":\"{{firstName}} {{lastName}}\",\r\n         \"committerEmail\":\"{{email}}\",\r\n         \"committerDate\":\"2020-12-18T08:31:03Z\",\r\n         \"authorName\":\"{{firstName}} {{lastName}}\",\r\n         \"authorEmail\":\"{{email}}\",\r\n         \"authorDate\":\"2020-12-18T08:31:03Z\",\r\n         \"log\":\"initial commit\\n\",\r\n         \"lastStatusChange\":null,\r\n         \"status\":null,\r\n         \"failedAttempts\":null,\r\n         \"analyzerMessage\":null,\r\n         \"parentHashes\":[\r\n            \r\n         ]\r\n      }\r\n   ]\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=UTF-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/version/326/qualityProfile",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"data\":{\r\n      \"result\":false,\r\n      \"resultsOfRules\":[\r\n         {\r\n            \"type\":\"QUALIFICATION_NODE\",\r\n            \"entity\":\"Code complexity\",\r\n            \"operator\":\"LE\",\r\n            \"value\":10.0,\r\n            \"actualValue\":2.6307007786429364,\r\n            \"result\":true\r\n         },\r\n         {\r\n            \"type\":\"WARNING\",\r\n            \"entity\":\"csharpsquid:S3431\",\r\n            \"operator\":\"GT\",\r\n            \"value\":100.0,\r\n            \"actualValue\":null,\r\n            \"result\":true\r\n         },\r\n         {\r\n            \"type\":\"METRIC\",\r\n            \"entity\":\"AVGNODL\",\r\n            \"operator\":\"GT\",\r\n            \"value\":0.0,\r\n            \"actualValue\":null,\r\n            \"result\":true\r\n         },\r\n         {\r\n            \"type\":\"QUALIFICATION_NODE\",\r\n            \"entity\":\"Maintainability\",\r\n            \"operator\":\"GT\",\r\n            \"value\":5.0,\r\n            \"actualValue\":2.547155578325478,\r\n            \"result\":false\r\n         }\r\n      ]\r\n   }\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=UTF-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/version/328/qualityProfile",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"data\":{\r\n      \"result\":true,\r\n      \"resultsOfRules\":[\r\n         {\r\n            \"type\":\"QUALIFICATION_NODE\",\r\n            \"entity\":\"Code complexity\",\r\n            \"operator\":\"LE\",\r\n            \"value\":10.0,\r\n            \"actualValue\":2.6307007786429364,\r\n            \"result\":true\r\n         },\r\n         {\r\n            \"type\":\"WARNING\",\r\n            \"entity\":\"csharpsquid:S3431\",\r\n            \"operator\":\"GT\",\r\n            \"value\":100.0,\r\n            \"actualValue\":null,\r\n            \"result\":true\r\n         },\r\n         {\r\n            \"type\":\"METRIC\",\r\n            \"entity\":\"AVGNODL\",\r\n            \"operator\":\"GT\",\r\n            \"value\":0.0,\r\n            \"actualValue\":null,\r\n            \"result\":true\r\n         },\r\n         {\r\n            \"type\":\"QUALIFICATION_NODE\",\r\n            \"entity\":\"Maintainability\",\r\n            \"operator\":\"GT\",\r\n            \"value\":5.0,\r\n            \"actualValue\":2.547155578325478,\r\n            \"result\":false\r\n         }\r\n      ]\r\n   }\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=UTF-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/version/11/qualityProfile",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"data\":{\r\n      \"result\":false,\r\n      \"resultsOfRules\":[\r\n         {\r\n            \"type\":\"QUALIFICATION_NODE\",\r\n            \"entity\":\"Code complexity\",\r\n            \"operator\":\"LE\",\r\n            \"value\":10.0,\r\n            \"actualValue\":3.75598,\r\n            \"result\":true\r\n         },\r\n         {\r\n            \"type\":\"QUALIFICATION_NODE\",\r\n            \"entity\":\"Maintainability\",\r\n            \"operator\":\"GT\",\r\n            \"value\":5.0,\r\n            \"actualValue\":4.6681,\r\n            \"result\":false\r\n         }\r\n      ]\r\n   }\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=UTF-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/version/31/qualityProfile",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"data\":{\r\n      \"result\":true,\r\n      \"resultsOfRules\":[\r\n         {\r\n            \"type\":\"QUALIFICATION_NODE\",\r\n            \"entity\":\"Code complexity\",\r\n            \"operator\":\"LE\",\r\n            \"value\":10.0,\r\n            \"actualValue\":2.6307007786429364,\r\n            \"result\":true\r\n         },\r\n         {\r\n            \"type\":\"WARNING\",\r\n            \"entity\":\"csharpsquid:S3431\",\r\n            \"operator\":\"GT\",\r\n            \"value\":100.0,\r\n            \"actualValue\":null,\r\n            \"result\":true\r\n         },\r\n         {\r\n            \"type\":\"METRIC\",\r\n            \"entity\":\"AVGNODL\",\r\n            \"operator\":\"GT\",\r\n            \"value\":0.0,\r\n            \"actualValue\":null,\r\n            \"result\":true\r\n         },\r\n         {\r\n            \"type\":\"QUALIFICATION_NODE\",\r\n            \"entity\":\"Maintainability\",\r\n            \"operator\":\"GT\",\r\n            \"value\":5.0,\r\n            \"actualValue\":2.547155578325478,\r\n            \"result\":false\r\n         }\r\n      ]\r\n   }\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=UTF-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/version/327/qualityProfile",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n    \"error\": \"Data not found\"\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=utf-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "api/version/33/qualityProfile",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\r\n   \"data\":{\r\n      \"result\":true\r\n   }\r\n}",
+                                "latency": 0,
+                                "statusCode": 200,
+                                "label": "",
+                                "headers": [
+                                    {
+                                        "key": "content-type",
+                                        "value": "application/json;charset=utf-8"
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "rulesOperator": "OR",
+                                "disableTemplating": false
+                            }
+                        ],
+                        "enabled": true,
+                        "randomResponse": false,
+                        "sequentialResponse": false
+                    }
+                ],
+                "proxyMode": true,
+                "proxyHost": "http://localhost:8090/",
+                "https": false,
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "proxyReqHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "proxyResHeaders": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "proxyRemovePrefix": false
+            }
+        }
+    ]
+}

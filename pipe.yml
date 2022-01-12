@@ -1,0 +1,12 @@
+name: OpenQualityChecker Pipe
+image: minhiriathaen/oqcp-bitbucket-pipe:0.0.1
+category: Code quality
+description: This pipe is for validating source with OpenQualityChecker.
+repository: https://bitbucket.org/minhiriathaen/oqcp-bitbucket-pipe
+maintainer:
+    name: Minhiri Athaen
+    email: minhiriathaen@gmail.com
+tags:
+    - bitbucket-pipelines
+    - pipes
+    - python
